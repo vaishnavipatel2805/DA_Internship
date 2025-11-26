@@ -26,7 +26,7 @@ The Titanic dataset offers a comprehensive glimpse into the passengers aboard th
 
 ### Column Types:-
 
-Numerical - Age,Fare,PassengerId
+Numerical - Age,Fare,PassengerId, fair
 Categorical - Survived, Pclass, Sex, SibSp, Parch,Embarked
 Mixed - Name, Ticket, Cabin
 
@@ -92,6 +92,7 @@ Train.csv : 891 entries , 12 columns
 6. cabin: (mixed)
     a. has many nan values
     b. 204 non-null
+    c. has multiple cabin names in one - diff alloted for family members
 
 7. fare : (numerical)
     a. potential outliers as avg is 32, max 512
