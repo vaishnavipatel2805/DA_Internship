@@ -1,0 +1,71 @@
+### feature engineering:-
+1. Deck
+2. age group
+
+### Bivariate Analysis Insights:-
+
+1. Numerical–Numerical Analysis
+
+    a. Age vs. Fare
+    
+        There is no strong linear correlation between Age and Fare.
+        Very high fares are typically paid by adults in 1st class, not by children.
+        Children (Age < 10) usually have moderate to low fares, indicating family travel in lower classes.
+    
+    b.Age vs. Individual Fare
+    
+        No strong relationship with age itself.
+        Younger children sometimes show 0 or very small individual fare.
+    
+2. Numerical–Categorical Analysis
+
+    a. Survived vs. Age
+    
+        Survival is higher among children (especially < 10 years).
+        Younger female passengers survive the most.
+        Middle-aged men (30–50) show the lowest survival.
+    
+    b. Survived vs. Fare
+    
+        Higher-fare passengers have a much higher survival rate.
+        Low-fare passengers (mostly 3rd class) have poor survival.
+        high fare higher priority during evacuation.
+    
+    c. Survived vs. Individual Fare
+    
+        High individual fare → High survival
+        Low individual fare → Low survival
+
+3. Categorical–Categorical Analysis
+
+    a. Survived vs. Pclass
+    
+        1st class → highest survival
+        2nd class → moderate
+        3rd class → lowest (especially adult males)
+    
+    Class is one of the strongest survival predictors.
+    
+    b. Survived vs. Sex
+    
+        Females have very high survival due to the "women and children first" rule.
+        Males, especially in 3rd class, have poor survival outcomes.
+    
+    c. Survived vs. Title
+
+        Titles like Miss, Mrs, Master show higher survival.
+        Title Mr has the lowest survival.
+        Rare aristocratic titles show almost guaranteed survival, reflecting privilege.
+
+    d. Survived vs Sex
+
+        Females had significantly higher survival compared to males.
+        The “women and children first” rule strongly influenced outcomes.
+        Male passengers, especially from 3rd class, had the lowest survival rate.
+        Sex was one of the strongest predictors of survival in the Titanic dataset.
+
+    e. Survived vs Embarked
+    
+        Passengers embarking from Cherbourg (C) had the highest survival rate
+        Southampton (S) passengers had the lowest survival.
+        Queenstown (Q) had moderate to low survival, but the sample size is small.
