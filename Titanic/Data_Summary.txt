@@ -1,0 +1,133 @@
+### Description of dataset:-
+
+The Titanic dataset offers a comprehensive glimpse into the passengers aboard the ill-fated RMS Titanic, which famously sank on its maiden voyage in April 1912 after colliding with an iceberg. This dataset contains a wealth of information about individual passengers, including demographics, ticket class, cabin information, family relationships, fare details, and most notably, survival outcomes.
+
+1. test.csv ->  Contains passenger details without the Survived column.
+418 entries, 11 columns
+
+2. train.csv -> Contains passenger details along with the Survived column (1 = Survived, 0 = Did not survive).
+891 entries , 12 columns
+
+
+### Columns Explained:-
+
+1. PassengerID: Unique ID assigned to each passenger
+2. Survived: (1 = Survived, 0 = Did not survive)
+3. Pclass: Ticket class (1st, 2nd, 3rd) 1st = Upper Class / Wealthier2 , 2nd = Middle Class, 3rd = Lower Class / Steerage
+4. Name: Passenger’s full name
+5. Sex: Passenger’s gender
+6. Age: Passenger’s age
+7. SibSp: Number of siblings/spouses aboard
+8. Parch: Number of parents/children aboard
+9. Ticket: Ticket number
+10. Fare: Ticket fare price
+11. Cabin: Cabin assignment
+12. Embarked: Port of embarkation i.e., initial place of borading (C = Cherbourg, Q = Queenstown, S = Southampton)
+
+### Column Types:-
+
+Numerical - Age,Fare,PassengerId, fair
+Categorical - Survived, Pclass, Sex, SibSp, Parch,Embarked
+Mixed - Name, Ticket, Cabin
+
+### Issues in datasets:-
+
+-> Manual Inspection findings:-
+
+1. name : (object) 
+    
+    lastName, title. firstName (other name)
+    a. some has middle name while others don't
+    b. some has other name
+    c. some names contain "
+    d. Miss./Ms.
+    e. titles like don. , col., Rev. present
+
+2. age : (numeric)
+    a. some ages are in floats
+    b. Null values present - 
+
+3. ticket : (mixed)
+    a. mixed data, both integer and text
+    b. varying numbers in ticket num
+
+4. price : (numeric)
+    a. passenger_id 1264 , 180, 303, 414, 467, 482, 598, 634, 675, 823, 816 has 0 as price 
+    b. above passengers 180, 303, 598 has LINE as entry in ticket col
+
+5. cabin : (categorical)
+    lot of missing values
+
+-> programming inspection :-
+
+Train.csv : 891 entries , 12 columns
+
+1. passenger_id : (string)
+    a. has dtype - int64 
+            can be converted to smaller dtype
+
+2. p class : (categorical)
+    a. has dtype - int64 
+            can be converted to category dtype
+    b. majority people in 3rd class
+
+3. sex : (categorical)
+    a. has dtype - object 
+            can be converted to category dtype
+
+4. age: (categorical / numerical)
+    a. has dtype - float64 
+            can be converted to smaller dtype 
+    b. has nan values
+    c. 75% is 38 but max is 80
+    d. 714/891 non-null
+
+
+5. embarked : (categorical)
+    a. has dtype - object
+            can be converted to category dtype
+    b. has nan values
+    c. 889/891 non-null
+
+6. cabin: (mixed)
+    a. has many nan values
+    b. 204 non-null
+    c. has multiple cabin names in one - diff alloted for family members
+
+7. fare : (numerical)
+    a. potential outliers as avg is 32, max 512
+
+8. survived : (categorical)
+    a. has int64 dtype
+        can be converted to categorical
+       
+
+Test.csv : 418 entries, 11 columns
+Everything same as above, but 
+
+1. fare : (numerical)
+    a. has one nan value
+    b. potential outliers as avg is 32, max 512
+
+### completness issue in cols:-
+
+1. age - 177 null
+2. fare - 1 null
+3. cabin - 687 out of 891 null
+4. embarked - 2 null
+
+### accuracy issues in cols :-
+
+1. age - float values
+2. fare - has 0 as entry
+3. name - disorder 
+
+
+### feature engineering:-
+
+cols that can be added: 
+
+    1. No. of family members - from sibsp and parch , Both can be merged into one col .
+    2. marital status - from title in name
+    3. age group - children, teenagers , adults, old
+    4. family size - individual , small , medium , large

@@ -1,0 +1,260 @@
+TITANIC DATASET – COMPLETE ANALYSIS & INSIGHTS
+===============================================
+
+1. DATA READING – FINDINGS
+---------------------------
+• The dataset contains passenger information such as Survived, Pclass, Sex, Age, Fare, Embarked, Cabin, Ticket.
+• Missing values found mainly in Age, Cabin, and Embarked.
+• Cabin column is highly sparse (~77% missing).
+• Age column contains moderate missing values (~19%).
+• Fare contains some extreme values (outliers).
+• Dataset is a mix of numerical and categorical features.
+
+2. FEATURE ENGINEERING
+----------------------
+
+A. FAMILY SIZE
+
+• Created using (SibSp + Parch + 1).
+• FamilySize ranges from 1 to 11.
+• Majority of passengers traveled alone (FamilySize = 1).
+• Family size strongly impacts survival.
+
+B. FAMILY TYPE
+
+• Categorized as:
+    - Alone (1)
+    - Small Family (2–4)
+    - Large Family (>=5)
+• Alone passengers have lowest survival.
+
+C. TITLE EXTRACTION
+
+• Extracted from Name column: Mr, Miss, Mrs, Master, etc.
+• Rare titles grouped to reduce sparsity.
+• Titles reflect age, gender, and social class → affect survival drastically.
+
+D. DECK (CABIN LETTER)
+
+• Extracted first letter of Cabin.
+• Missing cabins assigned 'Unknown'.
+• Higher decks (A, B, C) correspond to higher-class passengers → higher survival.
+
+E. INDIVIDUAL FARE
+
+• Calculated by dividing total Fare by FamilySize.
+• Normalizes shared-ticket fares.
+• Useful for fair comparison among passengers.
+
+F. AGE GROUP
+
+• Binned Age into groups: Baby, Child, Young Adult, Middle Aged Adult, Senior.
+• Younger groups show higher survival rates.
+
+3. DATA ANALYSIS
+----------------
+
+A. UNIVARIATE ANALYSIS – INSIGHTS
+--------------------------------
+
+• Survived:
+  - ~38% survived, 62% did not.
+  - Imbalanced but workable distribution.
+
+• Pclass:
+  - Most passengers belonged to 3rd class.
+  - Indicates affordability trends.
+
+• Sex:
+  - More males than females.
+  - Important for survival analysis due to “women and children first”.
+
+• Age:
+  - Right-skewed distribution.
+  - Most passengers aged 20–40.
+
+• Fare:
+  - Highly skewed with large outliers.
+  - Indicates diverse economic backgrounds.
+
+• Embarked:
+  - Majority boarded from Southampton (S).
+  - Cherbourg (C) has fewer but richer passengers.
+
+• FamilySize:
+  - Most passengers traveled alone.
+  - Very large families are rare.
+
+• Title:
+  - Majority are Mr, Miss, Mrs.
+  - Rare titles represent elite passengers.
+
+• Deck:
+  - Majority are 'Unknown'.
+  - Among known: B, C are most common.
+
+• AgeGroup:
+  - Young Adults dominate.
+  - Few babies and seniors.
+
+B. BIVARIATE ANALYSIS
+---------------------
+
+I. CATEGORICAL–CATEGORICAL
+
+A. Survived vs All Categories
+
+• Survived vs Sex:
+  - Females survival ~74%, males ~19%.
+
+• Survived vs Pclass:
+  - 1st class survival highest, 3rd class lowest.
+
+• Survived vs Embarked:
+  - C > Q > S in survival rate.
+
+• Survived vs AgeGroup:
+  - Babies and children show highest survival.
+
+• Survived vs FamilyType:
+  - Small families survive more; Alone lowest survival.
+
+• Survived vs Deck:
+  - Higher decks (A–C) survive more.
+
+B. Pclass vs All Categories
+
+• Pclass vs Sex:
+  - 3rd class has more males.
+
+• Pclass vs Embarked:
+  - S has most 3rd class passengers.
+
+• Pclass vs AgeGroup:
+  - Young Adults dominate all classes.
+
+• Pclass vs FamilyType:
+  - Larger families mostly in 3rd class.
+
+C. Sex vs Selected Categorical Columns
+
+• Sex vs Embarked:
+  - Nearly balanced except Q (more females).
+
+• Sex vs AgeGroup:
+  - Slightly more males in all age groups except babies.
+
+• Sex vs Survived:
+  - Gender impacts survival strongest among all features.
+
+II. CATEGORICAL–NUMERICAL
+
+A. Age with all Categorical Columns
+
+• Age vs Survived:
+  - Children have higher survival.
+
+• Age vs Pclass:
+  - 1st class passengers older on average.
+
+• Age vs Sex:
+  - Females slightly younger distribution.
+
+• Age vs Embarked:
+  - C passengers slightly older.
+
+B. Fare with all Categorical Columns
+
+• Fare vs Survived:
+  - Survived passengers paid higher fare.
+
+• Fare vs Pclass:
+  - 1st class: highest fare, 3rd class: lowest.
+
+• Fare vs Sex:
+  - Females generally paid higher fare.
+
+• Fare vs Embarked:
+  - C passengers paid the highest fares.
+
+C. Individual Fare with all Columns
+
+• IndividualFare vs Survived:
+  - Higher per-person fare increases survival.
+
+• IndividualFare vs Pclass:
+  - Strong separation by class.
+
+III. NUMERICAL–NUMERICAL
+
+• Fare vs Age:
+  - No strong linear relation.
+
+• Fare vs IndividualFare:
+  - Highly correlated (expected).
+
+• Age vs IndividualFare:
+  - Weak relationship.
+
+C. MULTIVARIATE ANALYSIS
+------------------------
+
+1. Pclass + Sex + Survived
+
+• Female survival high across all classes.
+• Male survival extremely low in 3rd class.
+• Strong combined effect of class and gender.
+
+2. Age + Pclass + Survived
+
+• Younger 1st class passengers survive most.
+• Older 3rd class passengers have lowest survival.
+
+3. Survived + Deck + Pclass
+
+• Deck A, B, C (upper decks) show highest survival.
+• Lower decks (E, F, G) correspond to lower class → lower survival.
+
+4. Fare + Pclass + Survived
+
+• Higher fare → higher class → higher survival.
+• High-fare 3rd class passengers still have worse survival due to location.
+
+5. FamilySize + Pclass + Survived
+
+• Small families (2–4) in 1st/2nd class survive the most.
+• Large families (>5) in 3rd class survive the least.
+
+6. Age + Sex + Survived
+
+• Age influences survival, but Sex is the dominant deciding factor.
+• Survival pattern: Female > Children > Male Adults > Elderly Males
+
+7. Embarked + Pclass + Survived
+
+• Survival pattern across (Port × Class)
+
+C + 1st class → Best survival
+
+Q + 3rd class → Worst survival
+
+S + 3rd class → Low survival due to crowding + male majority
+
+• Survival differences across Embarked ports are mainly due to the distribution of travel classes at each port, not the port itself.
+
+8. Age + Fare + Survived
+
+> Survival increases with higher fare and younger age.
+> Fare indirectly captures economic class, which heavily influenced survival chances during evacuation.
+
+----------------------------------------
+CONCLUSION
+----------------------------------------
+• Survival strongly influenced by Sex and Pclass.
+• Higher fare, better deck, and elite titles improve survival chances.
+• Family size and age also contribute but less strongly.
+• Outliers in Fare distort distribution and need capping.
+• Multivariate patterns confirm that socio-economic status had major influence on survival.
+• The engineered features (Title, Deck, FamilyType, IndividualFare, AgeGroup) significantly enhanced insights.
+
+
