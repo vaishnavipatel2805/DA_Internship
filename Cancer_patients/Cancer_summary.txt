@@ -25,3 +25,43 @@
 2. air pollution scores are almost uniformly distributed
 3. No major outliers
 4. skew Very close to 0, indicating almost perfect symmetry.
+
+### Alcohol_Use :
+1.Alcohol_Use is approximately uniformly distributed
+2.The boxplot indicates the median is central with no significant skew or outliers.
+3.mode = 6.8, mean = 5.01, median = 5.01
+
+### Target_severity :
+1.normal distribution
+2.Small tail values near extremes (<2 and >8) 
+3.Few mild outliers possible
+
+### Obesity_level, Smoking, Survival_Years :
+1. uniform distribution
+2. no posiible outliers
+
+### Gender:
+1. uniform distibution ascross gender
+2. males have reported most cancer cases among all
+
+### Year:
+1. year 2016 reported most number of cases and 2022 with least number of cases.
+2. The cancer cases increased in 2015 but then decreased in subsequently for two years .Then again from 2018 cases increased for two years upto 2020    and then decreased for two years upto 2022. The cases once again increased till 2014.
+3. So, a pattern of 2 years increase 2 years decrease can be seen.
+4. Despite fluctuations, the difference between highest and lowest count is small (~200–250 cases), which means variation is moderate, not extreme.
+5. Cumulative average case count peaks around 2017, then shows fluctuations until 2020 followed by a progressive decline from 2021 to 2024.
+
+### 
+
+
+
+
+
+
+
+
+
+
+
+
+
