@@ -1,5 +1,5 @@
 #### Data description :
-     Rows : 8549 
+     Rows : 50000 
      columns : 15 columns
 
 ### types of columns:
@@ -7,4 +7,21 @@
 2. categorical - Gender,country, Cancer_Type, Cancer_Stagee
 3. Date Time -  Year
 
-### Age
+### Age:
+1. min - 20, max- 89
+2. Nearly uniform distribution 
+3. mean=median=54
+4. mode = 77
+5. Cancer cases are distributed over wide age range, however majority fall between 40–75 years
+
+### Genetic Risk:
+1. min-0.0, max-10.0, avg = 5.001, median = 6.4, mode = 8.8
+2. Genetic_Risk values are spread uniform
+3. somewhat negatively skewed
+4. No extreme outliers visible.
+
+### Air pollution:
+1. mode = 0.8, mean = 5, median = 6.4
+2. air pollution scores are almost uniformly distributed
+3. No major outliers
+4. skew Very close to 0, indicating almost perfect symmetry.
