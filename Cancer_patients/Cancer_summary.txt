@@ -1,13 +1,16 @@
 #### Data description :
+
      Rows : 50000 
      columns : 15 columns
 
 ### types of columns:
+
 1. numerical - Age, Genetic_Risk,	Air_Pollution, Alcohol_Use, Smoking, Obesity_Level, Treatment_Cost_USD, Survival_Years, Target_Severity_Score
 2. categorical - Gender,country, Cancer_Type, Cancer_Stagee
 3. Date Time -  Year
 
 ### Age:
+
 1. min - 20, max- 89
 2. Nearly uniform distribution 
 3. mean=median=54
@@ -15,53 +18,121 @@
 5. Cancer cases are distributed over wide age range, however majority fall between 40–75 years
 
 ### Genetic Risk:
+
 1. min-0.0, max-10.0, avg = 5.001, median = 6.4, mode = 8.8
 2. Genetic_Risk values are spread uniform
 3. somewhat negatively skewed
 4. No extreme outliers visible.
 
 ### Air pollution:
+
 1. mode = 0.8, mean = 5, median = 6.4
 2. air pollution scores are almost uniformly distributed
 3. No major outliers
 4. skew Very close to 0, indicating almost perfect symmetry.
 
 ### Alcohol_Use :
+
 1.Alcohol_Use is approximately uniformly distributed
 2.The boxplot indicates the median is central with no significant skew or outliers.
 3.mode = 6.8, mean = 5.01, median = 5.01
 
 ### Target_severity :
+
 1.normal distribution
 2.Small tail values near extremes (<2 and >8) 
 3.Few mild outliers possible
 
 ### Obesity_level, Smoking, Survival_Years :
+
 1. uniform distribution
 2. no posiible outliers
 
 ### Gender:
+
 1. uniform distibution ascross gender
 2. males have reported most cancer cases among all
 
 ### Year:
+
 1. year 2016 reported most number of cases and 2022 with least number of cases.
 2. The cancer cases increased in 2015 but then decreased in subsequently for two years .Then again from 2018 cases increased for two years upto 2020    and then decreased for two years upto 2022. The cases once again increased till 2014.
 3. So, a pattern of 2 years increase 2 years decrease can be seen.
 4. Despite fluctuations, the difference between highest and lowest count is small (~200–250 cases), which means variation is moderate, not extreme.
 5. Cumulative average case count peaks around 2017, then shows fluctuations until 2020 followed by a progressive decline from 2021 to 2024.
 
-### 
+### Gender - Smoking:
+
+1.Median age is almost similar for Male, Female and Other groups
+2.All three groups show wide age variation (~20–90 years)
+3.Male and Female groups have slightly higher upper whiskers, indicating presence of older patients
+4.Outliers may exist toward the higher age range
+5.No significant difference in age distribution — cancer affects all genders across similar age ranges
+
+### Gender - Alcohol consuption level:
 
 
 
+### Gender - Obesity level:
+1.Low Obesity Category dominates across all genders, indicating cancer patients are more in lower obesity range compared to higher obesity.
+2. Male population has noticeably more High obesity cases compared to females, suggesting lifestyle factors may contribute more in men.
+3. Female patients have relatively higher Very High obesity numbers than Male, meaning severe obesity might be slightly more prevalent in females among cancer patients.
+4.Other Gender shows consistent distribution across categories, no extreme skew, but still more in Low obesity.
 
+### Gender - Smoking level:
 
+1. Most male and other gender patients are low smokers.
+2. While female patients are mostly moderate smokers.
+3. Among all genders males>females>other are high smokers.
 
+### Gender - Genetic_Risk_Level:
 
+1. Males have highest genetic risk level
+2. male and female both have equal low risk genetic risk level.
+3. other genders have lowest risk genetic levels
 
+### Gender - Air_Pollution_Level:
 
+1. Males have highest exposure to high pollution level while females and other genders are exposed to low pollution level.
 
+### Gender - Year:
 
+1. in year 2015,16,18 most cancer patients were Females 
+2. in year 2017 and then from 2019 - 2024 most cancer patients were males except in year 2023.
 
+### Gender	- Country_Region:
 
+1. Australia, Brazil, UK,China, Pak have more males cancer patients than other
+2. USA, Russia, India, Canada have more female cancer patients than other
+3. Germany is the only country where other gender patients are in larger number
+
+### Gender -  Cancer stage:
+
+1. Mostly cases in female , male were in stage 2
+3. in Other genders stage 3 cancer was most prevelent.
+
+### Gender - Treatment cost:
+
+1. avg cost of treatment is 50,000 USD.
+2. It can go as high as 100,000 USD and as low as 5000.
+
+### Gender - Survival years:
+
+1. Females have slighlty higher avg survival than males and other gender.
+
+### Gender - Age group:
+
+1. most cases were found between young adults across all genders 
+
+### Year - Country:
+
+1. china is the country which had highest cases followed by canada, pak , germany for 4,3,2,1 years respectively .
+2. cancer case trends in india increased and decreased alternatively after every 2 years.
+3. in 2022 India recorded lowest cancer case count.
+
+### Year - Age bin:
+
+1. throughout the years, cancer cases were highest in Young adults
+2. in 2016-17 num of cases rose in case of young and senior(61-75) whereas decreased for elderly and middle aged.
+3. Elderly(>75) and middle(41-60) , young aduls and Senior (61-75) aged people show same cancer cases trend across years 
+4. for middle and elders cases increased in 2020 and then decreased in 2021. But for adults and senior cases saw drop in cases from 2020-22
