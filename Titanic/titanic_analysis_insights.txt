@@ -10,6 +10,14 @@ TITANIC DATASET – COMPLETE ANALYSIS & INSIGHTS
 • Fare contains some extreme values (outliers).
 • Dataset is a mix of numerical and categorical features.
 
+### Handling Missing Values & Outliers
+
+Age was imputed using random many 
+Age grp with mode.  
+Cabin converted to Deck and missing values treated as ‘Unknown’
+Fare outliers detected using IQR method & capped to upper limit
+filled fare with median
+
 2. FEATURE ENGINEERING
 ----------------------
 
