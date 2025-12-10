@@ -136,3 +136,9 @@
 2. in 2016-17 num of cases rose in case of young and senior(61-75) whereas decreased for elderly and middle aged.
 3. Elderly(>75) and middle(41-60) , young aduls and Senior (61-75) aged people show same cancer cases trend across years 
 4. for middle and elders cases increased in 2020 and then decreased in 2021. But for adults and senior cases saw drop in cases from 2020-22
+
+### Year - Genetic_Risk_Level:
+
+1. In 2023, highest number of cases had very high genetic risk level
+2. In covid time 2019-21, the most prevelent one was low genetic risk level
+3. Over all, high genetic risk was seen majorly
