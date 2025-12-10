@@ -142,3 +142,12 @@
 1. In 2023, highest number of cases had very high genetic risk level
 2. In covid time 2019-21, the most prevelent one was low genetic risk level
 3. Over all, high genetic risk was seen majorly
+
+### Year - Cancer stage:
+
+1. Patient count across stages fluctuates year-to-year.
+2. Early stages (0 & 1) occur slightly more frequently, indicating detection often happens before cancer becomes severe.
+3. Advanced stages (3 & 4) show more variation, reflecting inconsistent diagnosis rates across years.
+4. Yearly trend is irregular, suggesting influence of lifestyle, detection awareness programs, or healthcare access.
+
+###
