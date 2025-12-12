@@ -137,11 +137,7 @@
 3. Elderly(>75) and middle(41-60) , young aduls and Senior (61-75) aged people show same cancer cases trend across years 
 4. for middle and elders cases increased in 2020 and then decreased in 2021. But for adults and senior cases saw drop in cases from 2020-22
 
-### Year - Genetic_Risk_Level:
 
-1. In 2023, highest number of cases had very high genetic risk level
-2. In covid time 2019-21, the most prevelent one was low genetic risk level
-3. Over all, high genetic risk was seen majorly
 
 ### Year - Cancer stage:
 
@@ -150,4 +146,183 @@
 3. Advanced stages (3 & 4) show more variation, reflecting inconsistent diagnosis rates across years.
 4. Yearly trend is irregular, suggesting influence of lifestyle, detection awareness programs, or healthcare access.
 
-###
+
+### RISK FACTORS ANALYSIS:-
+
+1. GENETIC RISK:
+
+    a. Genetic_Risk - country:
+
+        i. very high risk cases count are highest in australia > usa > uk.
+        ii. high risk cases count are highest in canada > India > Germany.
+        iii. moderate risk cases count are highest in India > Pakistan > Brazil .
+        iv. low risk cases count are highest in UK > Russis > Germany .
+
+    b.  Genetic_Risk_Level - Gender:
+
+        i. Each gender have nearly same avg genetic risk.
+        ii. Males have more number of cases of high genetic risk level.
+        iii. Other gender have more very high risk cases among all genders.
+
+    c. Genetic_Risk - Year:
+
+        i. In 2023, highest number of cases had very high genetic risk level
+        ii. In covid time 2019-21, the most prevelent one was low genetic risk level
+        iii. Over all, high genetic risk was seen majorly
+
+    d. Genetic_Risk_Level - Age:
+
+        i.  Genetic Risk distribution is similar across all age groups
+
+        ii. Minor variations across age groups, but no strong pattern. 
+            Seniors (61–75) and Middle Age (41–60) appear to have slightly higher average genetic risk compared to the youngest group.
+            However, these differences are small and not statistically meaningful.
+
+        iii. The heatmap shows a correlation of 0.002, which is almost zero.
+
+        iv. This confirms that genetic risk is independent of age and does not show a linear pattern.
+
+    e. Genetic_Risk_Level - Cancer type:
+
+        i. Overall Genetic Risk Levels Across Cancer Types Are Very Similar.
+            The line plot shows that the average genetic risk for all cancer types lies roughly around 5, with only minor variation (±0.1–0.2).
+
+        ii. Lung Cancer Shows the Highest Average Genetic Risk
+            Among all types, Lung cancer has the highest average genetic risk (~5.04+).
+            This may suggest a slightly higher influence of genetic factors among lung cancer patients compared to others.
+
+        iii. Genetic risk does not substantially differ across cancer types.
+             Although Lung cancer shows a slightly higher average genetic risk and Skin cancer shows a slightly lower one, 
+             the overall distribution of genetic risk is largely similar across all cancer categories.
+
+        iv. This indicates that while genetic factors contribute to cancer development, their influence does not drastically differ by 
+            cancer type in this dataset.
+
+    f. Genetic risk - target severity column:
+
+        i. The correlation heatmap indicates a moderate positive relationship (r ≈ 0.48) between Genetic Risk and Target Severity Score. 
+        ii. This suggests that individuals with higher genetic risk tend to exhibit higher severity levels, 
+            although the relationship is not strong enough to be considered a primary predictor.
+
+    g. Genetic Risk - cancer stage :
+
+        i. genetic risk is distributed similarly among different stages, and cancer stage is not determined by genetic risk alone.
+
+    h. Genetic Risk - survival years, treatment cost:
+
+        i. There is no correlation of genetic risk with survival years and the treatment cost
+
+2. AIR POLLUTION :
+
+    a. Air pollution - Age:
+
+        i. Air pollution and age have no correlation with each other .
+
+    b. Air pollution - Gender :
+
+        i. Gender distribution is almost identical across all pollution levels
+        ii. There is no evidence of gender-based variation in exposure or distribution across different pollution categories.
+
+    c. Air pollution - Cancer type :
+
+        i. Air pollution exposure is almost uniformly distributed across all cancer types.
+        ii. Patients diagnosed with different cancers appear to have very similar pollution exposure levels in this dataset.
+        ii. This suggests pollution is a general risk factor rather than one specific to a particular cancer type.
+
+    d . Air pollution - Cancer stage :
+
+        i. The counts across all cancer stages and all air pollution levels are remarkably consistent, clustering around 2,500 patients per group.
+        ii. the average (median) Air Pollution value experienced by patients is roughly the same regardless of the stage at which their cancer was              diagnosed.
+        iii. There is no discernible or significant relationship between the level of a patient's Air Pollution exposure and the stage at which                  their cancer was diagnosed.
+
+    e. Air pollution - survival years, treatment cost:
+
+        i. The correlation heatmap indicates that there is no statistically significant linear relationship between a patient's Air Pollution                  exposure and their Survival Years/ treatment.
+
+    f. Air pollution - target severity score :
+
+        i. There is a weak positive linear relationship between the cancer patient's Target_Severity_Score and their Air_Pollution exposure.
+        ii. This suggests that as the level of air pollution exposure increases, the target severity score tends to increase slightly, 
+            but the relationship is not strong.
+
+3. ALCOHOL USE:
+
+    a. Alcohol use - Gender:
+
+        i. The number of patients in every single category is very similar, clustering around 4,100 to 4,250 patients.
+            Example: The highest count is 4242 (Female, Moderate) and the lowest is 4065 (Female, Very High).
+
+    b . Alcohol use - 
+
+
+
+
+
+
+
+
+#### MULTIVARIATE ANALYSIS: 
+
+## Correlation Heatmap – Key Inferences
+
+    1. Risk factors (Air Pollution, Genetic Risk, Smoking, Obesity, Alcohol Use) show very weak correlation with each other
+    
+        All pairwise correlations between the risk factors are close to 0.
+        This means each risk factor is independent and does not influence the others in this dataset.
+    
+    2. Target Severity Score :
+    
+        A. Genetic Risk has the strongest positive correlation with Severity (0.48)
+        
+            Patients with higher genetic risk tend to have more severe cancer cases.
+            This is the most impactful risk factor for severity.
+            
+        B. Smoking also shows a moderate positive correlation with Severity (0.48)
+        
+            Higher smoking levels → higher severity.
+            Smoking is therefore a major behavioral contributor to severity.
+            
+        C. Alcohol Use shows mild positive correlation with Severity (0.36)
+        
+            Alcohol consumption also increases severity, but weaker than smoking/genetic risk.
+        
+        D. Air Pollution shows small but positive correlation with Severity (0.37)
+        
+            Indicates environmental pollution contributes modestly to cancer severity.
+        
+        E. Obesity Level shows a weak positive correlation with Severity (0.25)
+        
+            Obesity plays a role, but less dominant compared to genetics and smoking.
+    
+    3. Treatment Cost is moderately negatively correlated with Severity (-0.47) :
+    
+            a. As severity increases, treatment cost tends to decrease.
+    
+            b. This likely means early-stage (mild) cases receive more costly long-term treatments,
+            while late-stage (severe) patients have fewer treatment options or shorter treatment durations.
+    
+     4. Survival Years has no significant correlation with any risk factor
+    
+            Correlation values are extremely close to 0
+            Survival years are not directly determined by pollution, smoking, obesity, etc.
+    
+    5.  Top predictors of cancer severity:
+    
+            Genetic Risk (strongest)
+            Smoking
+            Air Pollution
+            Alcohol Use
+            Obesity
+
+### Across all age groups and cancer types, air pollution levels are distributed almost uniformly.
+    This indicates that exposure to air pollution is not concentrated in any specific age bracket or cancer group.
+    Therefore, air pollution does not exhibit age-specific or cancer-type-specific patterns, suggesting it is a common environmental factor        affecting the population broadly rather than selectively.
+    
+
+
+
+
+
+
+
+
